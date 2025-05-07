@@ -1,103 +1,109 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowRight, Bot, Clock, Zap, DollarSign } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import FeatureCard from "@/components/feature-card"
+import BackgroundAnimation from "@/components/background_animation"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center px-4 py-24 overflow-hidden bg-gradient-to-b from-black to-slate-900 md:py-32">
+        <BackgroundAnimation />
+        <div className="container relative z-10 flex flex-col items-center max-w-5xl gap-8 text-center">
+          <div className="inline-flex items-center px-3 py-1 mb-4 text-sm font-medium rounded-full bg-slate-800 text-cyan-400">
+            <Bot className="w-4 h-4 mr-2" />
+            <span>AI-Powered Customer Support</span>
+          </div>
+          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 md:text-6xl">
+            Revolutionizing Customer Support with AI
+          </h1>
+          <p className="max-w-2xl text-lg text-slate-300">
+            Our AI Call Agent replaces traditional call centers with intelligent, conversational AI that understands
+            context, solves problems, and delivers exceptional customer experiences 24/7.
+          </p>
+          <div className="flex flex-col gap-4 mt-6 sm:flex-row">
+            <Link href="/pricing">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+              >
+                View Pricing
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white border border-slate-600"
+              >
+                Learn More
+              </Button>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* Features Section */}
+      <section className="px-4 py-20 bg-slate-900">
+        <div className="container max-w-6xl mx-auto">
+          <h2 className="mb-12 text-3xl font-bold text-center text-white md:text-4xl">Key Features</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <FeatureCard
+              icon={<Clock className="w-10 h-10 text-cyan-400" />}
+              title="24/7 Availability"
+              description="Always available to assist customers, no matter the time zone or holiday schedule."
+            />
+            <FeatureCard
+              icon={<Zap className="w-10 h-10 text-purple-400" />}
+              title="Seamless Integration"
+              description="Easily integrates with your existing systems, CRM, and communication channels."
+            />
+            <FeatureCard
+              icon={<DollarSign className="w-10 h-10 text-emerald-400" />}
+              title="Cost-Effective Solutions"
+              description="Reduce operational costs by up to 70% compared to traditional call centers."
+            />
+          </div>
+          <div className="mt-16 text-center">
+            <Link href="/services">
+              <Button variant="ghost" className="text-cyan-400 hover:text-cyan-300 hover:bg-slate-800">
+                Explore All Features
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative px-4 py-20 bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden">
+        <BackgroundAnimation />
+        <div className="container relative z-10 max-w-4xl mx-auto text-center">
+          <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">Ready to Transform Your Customer Support?</h2>
+          <p className="mb-8 text-slate-300">
+            Join hundreds of businesses that have already upgraded their customer experience with our AI Call Agent.
+          </p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+              >
+                Get Started
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white border border-slate-600"
+              >
+                Contact Sales
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
